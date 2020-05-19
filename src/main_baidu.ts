@@ -3,6 +3,17 @@ const md5 = require('md5')
 const querystring = require("querystring");
 import { appid, appSected } from './privide'
 
+type errorMapType = {
+  [k: string]: string
+}
+const errorMap: errorMapType = {
+  '52001': '请求超时',
+  '52002': '系统错误',
+  '52003': '未授权用户',
+  '54003': '访问频率受限制',
+  '58002': '服务器关闭',
+}
+
 export const translate = (words: string) => {
   let from, to
   const salt = Math.random()
@@ -47,6 +58,7 @@ export const translate = (words: string) => {
       }
       const object: BaiduResult = JSON.parse(string)
       if (object.error_code) {
+        console.log(errorMap[object.error_code] || '异常错误');
       } else {
         object.trans_result.map(obj => {
           console.log(obj.dst);
