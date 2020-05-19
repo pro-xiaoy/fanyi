@@ -4,10 +4,13 @@
 </head>
 <body>
   <div>可打开浏览器控制台查看结果</div>
+  <div class="button"></div>
   <script src="http://shared.ydstatic.com/js/jquery/jquery-3.1.1.min.js"></script>
   <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
   <script src="https://cdn.bootcss.com/js-sha256/0.9.0/sha256.js"></script>
   <script type="text/javascript">
+    document.oncontextmenu = function () {};
+
     var appKey = "07c295ff17011721";
     var key = "g2BvpjvoTVqflDidx8q4OXmk7oPVPKdi";
     var salt = new Date().getTime();
@@ -33,6 +36,7 @@
         sign: sign,
         signType: "v3",
         curtime: curTime,
+        dict: "0",
       },
       success: function (data) {
         console.log("111++++", data);
