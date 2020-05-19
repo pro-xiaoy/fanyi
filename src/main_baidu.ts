@@ -27,7 +27,7 @@ export const translate = (words: string) => {
     to = "en";
   }
   let queryparams: string = querystring.stringify({
-    q: words,
+    q: words.toString(),
     from,
     to,
     appid,

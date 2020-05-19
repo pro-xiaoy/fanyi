@@ -12,6 +12,8 @@ npm install fanyi-xiaoy -g
 fy apple
 
 苹果
+# 增加多词查询功能(以\为分割线)
+fy make\love
 ```
 
 ### Github
